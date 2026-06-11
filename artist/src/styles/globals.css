@@ -1,0 +1,106 @@
+/* src/styles/globals.css */
+
+/* ─── CSS Variables ─────────────────────────────── */
+:root {
+  --rose:       #c97b8a;
+  --rose-deep:  #a0506a;
+  --wine:       #7a3a4a;
+  --wine-dark:  #5a2535;
+  --ink:        #0e0608;
+  --petal:      #f9e8ec;
+  --cream:      #fdf6f0;
+
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  --radius-sm:  10px;
+  --radius-md:  16px;
+  --radius-lg:  24px;
+  --radius-xl:  32px;
+}
+
+/* ─── Reset ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--wine-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Typography ─────────────────────────────────── */
+.display        { font-family: var(--font-display); font-weight: 300; }
+.display-italic { font-family: var(--font-display); font-weight: 300; font-style: italic; }
+.label          { font-family: var(--font-body); font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500; }
+
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: #d4a0ad; border-radius: 4px; }
+
+/* ─── Utility ────────────────────────────────────── */
+.hide-scroll::-webkit-scrollbar { display: none; }
+.hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .gallery-item {
+    aspect-ratio: 0.9;
+  }
+
+  /* Featured first image */
+  .gallery-item:first-child {
+    grid-column: span 2;
+    aspect-ratio: 1.7;
+  }
+
+  .gallery-label span {
+    font-size: 1rem !important;
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .gallery-item {
+    aspect-ratio: 4/5;
+  }
+
+  .gallery-item.featured {
+    aspect-ratio: 4/6;
+  }
+}
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
