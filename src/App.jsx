@@ -106,71 +106,6 @@ function Petals() {
           position: absolute; pointer-events: none;
           font-size: 14px; animation: petalFall linear infinite;
         }
-          /* ===== About Section Responsive ===== */
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.about-image {
-  height: 480px;
-}
-
-.about-badge {
-  position: absolute;
-  bottom: -16px;
-  right: -16px;
-}
-
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 50px;
-  }
-
-  .about-image {
-    height: 420px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-grid {
-    gap: 40px;
-  }
-
-  .about-image {
-    height: 350px;
-  }
-
-  .about-badge {
-    right: 10px;
-    bottom: 10px;
-    padding: 14px 18px !important;
-  }
-
-  .about-badge p:first-child {
-    font-size: 1.8rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-image {
-    height: 280px;
-    border-radius: 18px;
-  }
-
-  .about-badge {
-    padding: 12px 16px !important;
-  }
-
-  .skill-chip {
-    font-size: 11px;
-    padding: 7px 14px;
-  }
-}
       `}</style>
       {[...Array(10)].map((_, i) => (
         <span
@@ -244,7 +179,7 @@ export default function App() {
         @media (min-width: 500px) { .wa-text { display: inline; } }
 
         /* ── Gallery hover ── */
-        .gallery-item { position: relative; overflow: hidden; border-radius: 18px; cursor: pointer; }
+        .gallery-item { position: relative; overflow: hidden; cursor: pointer; }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.23,1,0.32,1); display: block; }
         .gallery-item:hover img { transform: scale(1.08); }
         .gallery-label {
@@ -287,44 +222,27 @@ export default function App() {
           background: rgba(201,123,138,0.1); color: #a0506a;
           border: 1px solid rgba(201,123,138,0.22);
         }
-        .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    }
 
-    @media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
+        /* ── Hero section mobile padding ── */
+        @media (max-width: 480px) {
+          .hero-inner {
+            padding-top: 100px !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+          }
+        }
 
-    .gallery-item {
-        height: 220px !important;
-    }
-
-    .gallery-label {
-        opacity: 1;
-        padding: 12px;
-    }
-
-    .gallery-label span {
-        font-size: 1rem !important;
-    }
-    }
-
-    @media (max-width: 480px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-  .gallery-item {
-    height: 180px !important;
-    border-radius: 12px;
-  }
-}
-  
+        /* ── Section mobile padding ── */
+        @media (max-width: 640px) {
+          .section-pad {
+            padding-top: 70px !important;
+            padding-bottom: 80px !important;
+          }
+          .section-pad-sm {
+            padding-top: 60px !important;
+            padding-bottom: 60px !important;
+          }
+        }
       `}</style>
 
       {/* ── Navbar ── */}
@@ -343,7 +261,7 @@ export default function App() {
       >
         {heroIn && <Petals />}
 
-        {/* Decorative circles */}
+        {/* Decorative circles — hidden on very small screens to reduce clutter */}
         {[
           { size: 360, top: "8%", right: "6%", opacity: 0.07 },
           { size: 220, bottom: "12%", left: "4%", opacity: 0.05 },
@@ -364,10 +282,11 @@ export default function App() {
         ))}
 
         <div
+          className="hero-inner"
           style={{
-            maxWidth: 780, margin: "0 auto", padding: "0 28px",
+            maxWidth: 780, margin: "0 auto",
+            padding: "120px 28px 0",
             textAlign: "center", zIndex: 2,
-            paddingTop: 120,
           }}
         >
           {heroIn && (
@@ -410,8 +329,7 @@ export default function App() {
               </p>
 
               <div
-                className="fade-up d4"
-                style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}
+                className="fade-up d4 hero-btn-group"
               >
                 <a
                   href={WHATSAPP_URL}
@@ -456,13 +374,7 @@ export default function App() {
           padding: "44px 28px",
         }}
       >
-        <div
-          style={{
-            maxWidth: 900, margin: "0 auto",
-            display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16,
-            textAlign: "center",
-          }}
-        >
+        <div className="stats-grid">
           {STATS.map((s) => (
             <div key={s.num}>
               <p
@@ -497,6 +409,7 @@ export default function App() {
           PORTFOLIO
       ════════════════════════════════════════════ */}
       <section id="portfolio"
+        className="section-pad"
         style={{
           background: "linear-gradient(180deg, #f9ece8 0%, #fdf6f0 100%)",
           padding: "100px 28px",
@@ -577,7 +490,7 @@ export default function App() {
       {/* ════════════════════════════════════════════
           ABOUT
       ════════════════════════════════════════════ */}
-      <section id="about" style={{ background: "white", padding: "100px 28px" }}>
+      <section id="about" className="section-pad" style={{ background: "white", padding: "100px 28px" }}>
         <div  className="about-grid"
   style={{
     maxWidth: 1100,
@@ -755,7 +668,7 @@ export default function App() {
       </section>
 
       {/* Testimonials */}
-      <section style={{ background: "var(--cream)", padding: "80px 28px" }}>
+      <section className="section-pad-sm" style={{ background: "var(--cream)", padding: "80px 28px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 52 }}>
             <span
@@ -840,21 +753,23 @@ export default function App() {
         </div>
       </section>
 
- <div className="insta-grid">
-  {INSTA_POSTS.map((url) => (
-    <InstagramEmbed
-      key={url}
-      url={url}
-      width="100%"
-
-    />
-  ))}
+ <div style={{ background: "var(--cream)", padding: "60px 0" }}>
+  <div className="insta-grid">
+    {INSTA_POSTS.map((url) => (
+      <InstagramEmbed
+        key={url}
+        url={url}
+        width="100%"
+      />
+    ))}
+  </div>
 </div>
 
       {/* ════════════════════════════════════════════
           CONTACT
       ════════════════════════════════════════════ */}
       <section id="contact"
+        className="section-pad"
         style={{
           background: "linear-gradient(135deg, #5a2535 0%, #7a3a4a 50%, #a0506a 100%)",
           padding: "100px 28px 120px",
@@ -909,6 +824,7 @@ export default function App() {
           </a>
 
           <div
+            className="contact-info-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
