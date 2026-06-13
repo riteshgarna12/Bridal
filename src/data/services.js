@@ -23,7 +23,7 @@ export const SERVICES = [
   },
   {
     id: 2,
-    slug: "pre-wedding",
+    slug: "pre-wedding-makeup",
     title: "Pre-Wedding Shoot",
     subtitle: "Photography Ready",
     shortDesc: "Soft, romantic, luminously photogenic looks built for every frame.",
@@ -61,7 +61,7 @@ export const SERVICES = [
   },
   {
     id: 4,
-    slug: "soft-bridal",
+    slug: "soft-bridal-makeup",
     title: "Soft Bridal",
     subtitle: "Ethereal & Dewy",
     shortDesc: "Barely-there perfection — until the photos take your breath away.",
@@ -80,7 +80,7 @@ export const SERVICES = [
   },
   {
     id: 5,
-    slug: "signature-look",
+    slug: "signature-look-finish",
     title: "Signature Look",
     subtitle: "Uniquely Yours",
     shortDesc: "Your personality, distilled into one iconic look created only for you.",
@@ -99,7 +99,7 @@ export const SERVICES = [
   },
   {
     id: 6,
-    slug: "editorial",
+    slug: "editorial makeup",
     title: "Editorial & Modelling",
     subtitle: "High Fashion Artistry",
     shortDesc: "Makeup as art — avant-garde looks for campaigns, runways & portfolios.",
@@ -118,7 +118,7 @@ export const SERVICES = [
   },
   {
     id: 7,
-    slug: "reception-sangeet",
+    slug: "reception-sangeet makeup",
     title: "Reception & Sangeet",
     subtitle: "Dance All Night",
     shortDesc: "High-performance, long-wear glam designed to last every reel and moment.",
