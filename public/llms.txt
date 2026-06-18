@@ -1,0 +1,16 @@
+# Sonal Signature Makeups
+
+> Professional bridal makeup artist based in Jaipur, Rajasthan, India. Specialising in luxury bridal makeup, HD makeup, airbrush makeup, and hairstyling for weddings, pre-wedding shoots, engagements, and editorial work.
+
+## Key Pages
+
+- [Home](https://www.sonalsignaturemakeups.shop/): Introduction to Sonal Saini, bridal makeup artist in Jaipur with 8+ years of experience.
+- [Services](https://www.sonalsignaturemakeups.shop/#services): Full list of makeup and hairstyling services including bridal, engagement, HD, airbrush, party, and editorial makeup.
+- [Portfolio](https://www.sonalsignaturemakeups.shop/#portfolio): Gallery of bridal and editorial looks by Sonal Saini.
+- [About](https://www.sonalsignaturemakeups.shop/#about): Background, training, certifications, and philosophy of Sonal Saini.
+- [Contact](https://www.sonalsignaturemakeups.shop/#contact): WhatsApp booking, location, and availability details.
+
+## Optional
+
+- [Instagram](https://www.instagram.com/sonalmakeovers/): Reels and portfolio posts showcasing recent bridal and editorial work.
+- [llms-full.md](https://www.sonalsignaturemakeups.shop/llms-full.md): Full plain-text content of the site for AI tools.
